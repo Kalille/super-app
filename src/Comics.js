@@ -11,15 +11,12 @@ class Comics extends Component{
             input: '',
             title: '',
             image: '',
-            
-         
-        }
+            }
     }
     handelChange=(e)=>{
         this.setState({
             input:  e.target.value,
         })
-        
     }
     
     handleSubmit=(e)=>{
@@ -27,7 +24,7 @@ class Comics extends Component{
         
                 fetch(`https://gateway.marvel.com:443/v1/public/comics?title=${this.state.input}&limit=10&apikey=c9cde59c0f04bf2e0fd8b32ee6b1d609`)
                 .then(res=>res.json())
-                // .then(data=> console.log(data.data.results[0].id))
+               
                 .then(data=>{
                    
                     
@@ -39,26 +36,18 @@ class Comics extends Component{
                     })
                 })
                 .catch(err=> alert(err))
-           
     }
     render(){
-        
-        const style = {
-            background: 'red',
-        }
+       
         return(
             <div>
                 <br/>
-               
-               <form onSubmit={this.handleSubmit}>
-               <Form.Control onSubmit={this.handleSubmit} onChange={this.handelChange} size="sm" type="text" placeholder="Enter Marvel comic or character here....." />
+               <Form onSubmit={this.handleSubmit}>
+               <Form.Control onSubmit={this.handleSubmit} onChange={this.handelChange} size="md" type="text" placeholder="Enter Marvel comic or character here....." />
                <br/>
-               <Button onClick={()=>console.log('clicked')}as="input" type="submit" value="Search" />
-               {/* <Button onClick={()=>console.log('clicked')} variant="outline-danger">SEARCH</Button>{' '} */}
-               </form>
+               <center><Button onClick={()=>console.log('clicked')}as="input" type="submit" value="Search" /></center>
+               </Form>
                <ComicCard comics={this.state.comics} title={this.state.title} image={this.state.image}/>
-               {/* <h1>{this.state.title}</h1>
-             <img src={this.state.image}></img>  */}
             </div>
         )
     }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import HeroCard from './HeroCard'
-import {Form, Button,Col,Row} from 'react-bootstrap';
+import {Form, Button} from 'react-bootstrap';
 
 
 
@@ -45,25 +45,15 @@ class CharacterForm extends Component{
         console.log(this.state.image)
       }
         render(){
-            const style = {
-                width: '500px',
-            }
-            const val = this.state.value
+
         return(
             
             <div className='flex h-screen'>
                 <br/>
                 
                 <Form className='m-auto' onSubmit={this.handleSubmit} >   
-                
                 <Form.Control className='form' onSubmit={this.handleSubmit} onChange={this.handleChange}  size="md" type="text" placeholder="Enter Marvel character here....." />
-                   {/* <label><b>Character Select</b></label>
-                   <input onChange={this.handleChange}type='text'
-                   
-                   className='serch-box'/> */}
-                    
-                 <Button onClick={()=>console.log('clicked')}as="input" type="submit" value="Search" />
-                
+                <center> <Button onClick={()=>console.log('clicked')}as="input" type="submit" value="Search" /></center> 
                 </Form>
                 <HeroCard name={this.state.name} 
                 image={this.state.image}

@@ -12,9 +12,7 @@ export default class CommentForm extends Component{
         }
 
     }
-    componentDidMount(){
-
-    }
+    
 
     handleSubmit=(e)=>{
        
@@ -41,14 +39,7 @@ export default class CommentForm extends Component{
            
         })
     }
-    handleChange2=(e)=>{
-      
-        this.setState({
-          
-           lastname: e.target.value
-           
-        })
-    }
+  
     handleChange3=(e)=>{
       
         this.setState({
@@ -57,7 +48,7 @@ export default class CommentForm extends Component{
            
         })
     }
-    render(){console.log(this.state)
+    render(){
         return(
             <div>
                <br/>
@@ -66,21 +57,18 @@ export default class CommentForm extends Component{
     <Col>
       <Form.Control onChange={this.handleChange1} placeholder="Favorite Character" />
     </Col>
-    <Col>
-      <Form.Control onChange={this.handleChange2} placeholder="Favorite Comic" />
-    </Col>
- 
+   
   </Row>
   <Form.Control as='textarea' onChange={this.handleChange3} placeholder="Tell us why...." >
 
   </Form.Control>
   <Col>
-       <Button type='submit'variant="primary">SUBMIT</Button>
+    <center> <Button type='submit'variant="primary">SUBMIT</Button></center> 
     </Col>
 </Form>
             <CommentList 
             char={this.state.favoriteCharacter}
-            comic={this.state.FavoriteComic}
+           
             comment={this.state.comment}/>
             </div>
         )

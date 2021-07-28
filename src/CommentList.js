@@ -15,7 +15,7 @@ export default class CommentList extends Component{
     fetch(`http://localhost:3003/favs`)
    
     .then(res=>res.json())
-//    .then((res)=>console.log(res))
+
     .then(favs=>{
         
       
@@ -24,15 +24,13 @@ export default class CommentList extends Component{
            data: favs
         })
     })
-    // .then(data=>{
-    //     data.map(fav=>console.log(fav))
-    // })
+   
   }
 
-    render(){console.log(this.state.name)
+    render(){
         return(
-            <div>
-                <h1><b>COMMENTS</b></h1>
+            <div><center>
+                <h1><center><b>CHECK OUT WHAT OTHER PEOPLE HAD TO SAY</b></center></h1>
                  {this.state.data.map((comic,index)=>{
               
                      return(
@@ -51,6 +49,7 @@ export default class CommentList extends Component{
                   </div>
                      )
                 })}
+                </center> 
              </div>
          )
 }}

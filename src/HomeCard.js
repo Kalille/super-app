@@ -1,18 +1,9 @@
 import React, {Component} from 'react';
 import {Card} from 'react-bootstrap';
-import {Carousel} from 'react-bootstrap';
+
 
  class HomeCard extends Component{
-  //  generateCard = () =>{
-  //    return
-  //    this.props.heroes.map((hero, i)=>{
-  //      return
-       
-      
-       
-  //    })
-     
-  //  }
+ 
         render(){
       
         return(
