@@ -14,6 +14,7 @@ class NavBar extends Component{
     render(){
         return(
             <div>
+          
            <NavLink
            to='/Home'
            exact
@@ -43,6 +44,16 @@ class NavBar extends Component{
            }}
            >
                COMICS
+           </NavLink>
+           <NavLink
+           to='/CommentForm'
+           exact
+           style={link}
+           activeStyle={{
+               background: 'red'
+           }}
+           >
+               Favorites
            </NavLink>
             </div>
         )

@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.comic-card {
+  width: 100px;
+  height: 100px;
+  margin: 15%;
+  padding: 10px;
+  
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.comic-card:hover {
+  transform: scale(1.05)
+}
+
+.comic-card:active {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+.comic-card {
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 650px;
+  height: 650px;
+}
+.comic-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+.form{
+  width: 100px
+}
+

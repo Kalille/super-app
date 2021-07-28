@@ -1,10 +1,12 @@
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './NavBar'
 import Home from './Home'
 import React,{Component} from 'react'
 import CharacterForm from './CharacterForm'
 import Comics from './Comics'
-
+import CommentForm from './CommentForm'
 
 class App extends Component{
 
@@ -13,15 +15,17 @@ render(){
   return(
     <Router>
     <div className="App">
+      
      <NavBar/>
     <Switch>
+      <Route exact path='/CommentForm' component={CommentForm}/>
     <Route exact path='/Home' component={Home}/>
     <Route exact path='/CharacterForm' component={CharacterForm}/>
     <Route exact path='/Comics' component={Comics}/>
     </Switch>
    
 
-     
+    
      
     </div>
     </Router>

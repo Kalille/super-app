@@ -1,9 +1,64 @@
 {
-    "posts": [
-    { "id": 1, "name": "kalille", "title": "learn json-server", "author": "Mrinmay Mukherjee" }
-    ],
-    "comments": [
-    { "id": 1, "body": "it's pretty awesome", "postId": 1 }
-    ],
-    "profile": { "name": "Mrinmay Mukherjee" }
-   }
+  "favs": [
+    {
+      "id": 1,
+      "favoriteCharacter": "Hulk",
+      "FavoriteComic": "t",
+      "comment": "He is the best"
+    },
+    {
+      "favoriteCharacter": "cap",
+      "comment": "why not",
+      "id": 2
+    },
+    {
+      "favoriteCharacter": "tony stark",
+      "FavoriteComic": "secret wars",
+      "comment": "kkkkk",
+      "id": 3
+    },
+    {
+      "favoriteCharacter": "cap",
+      "comment": "too cool",
+      "id": 4
+    },
+    {
+      "favoriteCharacter": "cyclop",
+      "comment": "the eye beam for me",
+      "id": 5
+    },
+    {
+      "favoriteCharacter": "thor",
+      "comment": "",
+      "id": 6
+    },
+    {
+      "favoriteCharacter": "wolverine",
+      "comment": "hes indestructible",
+      "id": 7
+    },
+    {
+      "comment": "because hes black",
+      "id": 8
+    },
+    {
+      "comment": "",
+      "id": 9
+    },
+    {
+      "favoriteCharacter": "blade",
+      "comment": "because hes black",
+      "id": 10
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

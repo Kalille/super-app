@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
-import List from './List'
+import HeroCard from './HeroCard'
+import {Form, Button,Col,Row} from 'react-bootstrap';
+
+
 
 class CharacterForm extends Component{
 
@@ -9,6 +12,7 @@ class CharacterForm extends Component{
           value:'',
           name:'',
           image: '',
+          description: ""
       }
   }
 
@@ -26,14 +30,17 @@ class CharacterForm extends Component{
         .then(res=>res.json())
        
         .then(data=>{
-            const jpg = 'jpg'
+            
             const wordObject= data.data.results[0]
             this.setState({
+               
                 name: wordObject.name,
                 description: wordObject.description,
                 image: `${wordObject.thumbnail.path}.${wordObject.thumbnail.extension}`
             })
         })
+        .catch(err=> alert(` Your CLEARLY not a fan... Try Again! `))
+        
         
         console.log(this.state.image)
       }
@@ -41,19 +48,28 @@ class CharacterForm extends Component{
             const style = {
                 width: '500px',
             }
+            const val = this.state.value
         return(
-            <div >
+            
+            <div className='flex h-screen'>
                 <br/>
-                <form onSubmit={this.handleSubmit} className= 'form-box'>
-                   <label><b>Character Select:</b></label>
+                
+                <Form className='m-auto' onSubmit={this.handleSubmit} >   
+                
+                <Form.Control className='form' onSubmit={this.handleSubmit} onChange={this.handleChange}  size="md" type="text" placeholder="Enter Marvel character here....." />
+                   {/* <label><b>Character Select</b></label>
                    <input onChange={this.handleChange}type='text'
                    
-                   className='serch-box'/>
-                   <button onClick={(()=>console.log('clicked'))}>search</button>
-                </form>
-            <h3>{this.state.name}</h3>
-        <h3>{this.state.description}</h3>
-         <img src={this.state.image} style={style}></img>
+                   className='serch-box'/> */}
+                    
+                 <Button onClick={()=>console.log('clicked')}as="input" type="submit" value="Search" />
+                
+                </Form>
+                <HeroCard name={this.state.name} 
+                image={this.state.image}
+                 description={this.state.description === null ? 'not found': this.state.description}
+      
+         />
             </div>
         )
     }
