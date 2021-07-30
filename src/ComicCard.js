@@ -7,7 +7,7 @@ import {Card} from 'react-bootstrap';
 
 
        render(){
-           console.log(this.props)
+           
            return(
               <div>
                    {this.props.comics.map((comic,index)=>{

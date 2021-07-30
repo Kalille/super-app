@@ -26,7 +26,7 @@ class Comics extends Component{
                 .then(res=>res.json())
                
                 .then(data=>{
-                   
+                   if(data.data.results !== null){
                     
                        this.setState({
                             comics: data.data.results,
@@ -34,8 +34,8 @@ class Comics extends Component{
                         image: `${data.data.results[0].images[0].path}.${data.data.results[0].images[0].extension}`,
                           id: data.data.results[0].id
                     })
-                })
-                .catch(err=> alert(err))
+                }})
+                .catch(err=>console.log(err))
     }
     render(){
        
@@ -45,7 +45,7 @@ class Comics extends Component{
                <Form onSubmit={this.handleSubmit}>
                <Form.Control onSubmit={this.handleSubmit} onChange={this.handelChange} size="md" type="text" placeholder="Enter Marvel comic or character here....." />
                <br/>
-               <center><Button onClick={()=>console.log('clicked')}as="input" type="submit" value="Search" /></center>
+               <center><Button as="input" type="submit" value="Search" /></center>
                </Form>
                <ComicCard comics={this.state.comics} title={this.state.title} image={this.state.image}/>
             </div>
