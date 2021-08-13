@@ -13,6 +13,7 @@ import {Card} from 'react-bootstrap';
                            <div key={index}>
                                          <br/>
                     <br/>
+                    <center>
                 <Card style={{ width: '20rem' }}>
                 <Card.Img variant="top" src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}  />
                 <Card.Body>
@@ -20,7 +21,7 @@ import {Card} from 'react-bootstrap';
                 <Card.Text>{this.props.description}</Card.Text> 
                 </Card.Body>
                 </Card>
-
+                        </center>
                            </div>
                        )
                         })

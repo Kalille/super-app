@@ -37,7 +37,7 @@ class Home extends Component{
                 <br/>
              <center>  <h1>WeLcOmE CoMiC HeAds!</h1>
      
-             <HomeCard heroes={this.state.characters} name={this.state.name} image={this.state.characters.image}/>
+             <HomeCard  heroes={this.state.characters} name={this.state.name} image={this.state.characters.image}/>
            
              </center> 
             </div>
