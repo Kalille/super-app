@@ -8,14 +8,16 @@ import CharacterForm from './CharacterForm'
 import Comics from './Comics'
 import CommentForm from './CommentForm'
 
+
 class App extends Component{
 
 render(){
   
   return(
+    <div>
     <Router>
     <div className="App">
-      
+      {/* <New/> */}
      <NavBar/>
     <Switch>
       <Route exact path='/CommentForm' component={CommentForm}/>
@@ -29,6 +31,8 @@ render(){
      
     </div>
     </Router>
+  
+    </div>
   )
 }
 

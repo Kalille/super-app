@@ -1,10 +1,11 @@
-body {
+body, html {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
@@ -12,10 +13,10 @@ code {
     monospace;
 }
 .comic-card {
-  width: 100px;
+  width: 75px;
   height: 100px;
   margin: 15%;
-  padding: 10px;
+  padding: 30px;
   
   transition: transform 1s;
   transform-style: preserve-3d;
@@ -27,20 +28,47 @@ code {
 
 .comic-card:active {
   transform: rotateY(180deg) scale(1.05);
-}
+ 
+} 
 
 .comic-card {
-  flex-direction: row;
+  overflow: hidden;
+  box-shadow:0 2px 20px gray;
+  flex-direction: column;
+ display:flex;
   flex-wrap: wrap;
+  transition:transform 200ms ease-in;
   width: 650px;
   height: 650px;
+  cursor: pointer;
 }
-.comic-card {
+/* .comic-card {
   display: flex;
   align-items: center;
-  justify-content: center;
-} 
+  justify-content: space-between;
+}  */
 .form{
   width: 100px
 }
 
+.wrapper{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(20rem, 16rem));
+}
+.image{
+  height:12rem;
+  width:100%;
+  object-fit: cover;
+}
+.footer{
+  background: black;
+  color: red;
+  height: 100px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.root{
+  min-height: 100%;
+  background-color: black;
+}

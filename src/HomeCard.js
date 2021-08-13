@@ -7,14 +7,14 @@ import {Card} from 'react-bootstrap';
         render(){
       
         return(
-            <div className='box'>
+            <div className='wrapper'>
                  {this.props.heroes.map((hero, i)=>{
         
             return (
-                <div className='box' key={i}>
+                <div  key={i}>
  
-                <Card className='grid' style={{ width: '20rem'}}>
-                <Card.Img variant="top" src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}  />
+                <Card style={{ width: '20rem'}}>
+                <Card.Img className='image' variant="top" src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}  />
                 <Card.Body>
                 <Card.Title> {hero.name}</Card.Title>
               

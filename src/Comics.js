@@ -11,6 +11,7 @@ class Comics extends Component{
             input: '',
             title: '',
             image: '',
+            price:'',
             }
     }
     handelChange=(e)=>{
@@ -24,7 +25,7 @@ class Comics extends Component{
         
                 fetch(`https://gateway.marvel.com:443/v1/public/comics?title=${this.state.input}&limit=10&apikey=c9cde59c0f04bf2e0fd8b32ee6b1d609`)
                 .then(res=>res.json())
-               
+              
                 .then(data=>{
                    if(data.data.results !== null){
                     
@@ -32,13 +33,14 @@ class Comics extends Component{
                             comics: data.data.results,
                         title: data.data.results[0].title,
                         image: `${data.data.results[0].images[0].path}.${data.data.results[0].images[0].extension}`,
-                          id: data.data.results[0].id
+                          id: data.data.results[0].id,
+                          price: data.data.results[0].prices[0].price,
                     })
                 }})
                 .catch(err=>alert('please try again'))
     }
     render(){
-       
+       console.log(this.state.comics)
         return(
             <div>
                 <br/>
@@ -47,7 +49,7 @@ class Comics extends Component{
                <br/>
                <center><Button as="input" type="submit" value="Search" /></center>
                </Form>
-               <ComicCard comics={this.state.comics} title={this.state.title} image={this.state.image}/>
+               <ComicCard comics={this.state.comics} title={this.state.title} image={this.state.image} price={this.state.price}/>
             </div>
         )
     }

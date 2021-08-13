@@ -34,10 +34,10 @@ export default class CommentList extends Component{
                  {this.state.data.map((comic,index)=>{
               
                      return(
-                  <div key={index} className='flex h-screen'>
+                  <div key={index} c>
                                        <br/>
                   <br/>
-              <Card className='m-auto' style={{ width: '20rem' }}>
+              <Card className='wrapper'  style={{ width: '20rem' }}>
               
               <Card.Body>
                   <h6><b>CHARACTER NAME</b></h6>

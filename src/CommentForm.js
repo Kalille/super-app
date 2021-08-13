@@ -27,6 +27,7 @@ export default class CommentForm extends Component{
                 })
             })
             .then((res)=> console.log(res))
+            
           
         }
 

@@ -15,6 +15,11 @@
       "favoriteCharacter": "wolverine",
       "comment": "The Claws",
       "id": 3
+    },
+    {
+      "favoriteCharacter": "Storm",
+      "comment": "she controls weather",
+      "id": 4
     }
   ]
 }
