@@ -35,7 +35,7 @@ class Comics extends Component{
                           id: data.data.results[0].id
                     })
                 }})
-                .catch(err=>console.log(err))
+                .catch(err=>alert('please try again'))
     }
     render(){
        

@@ -12,7 +12,7 @@ export default class CommentList extends Component{
     }
   componentDidMount(){
  
-    fetch(`http://localhost:3003/favs`)
+    fetch(`http://localhost:3000/favs`)
    
     .then(res=>res.json())
 
@@ -30,7 +30,7 @@ export default class CommentList extends Component{
     render(){
         return(
             <div><center>
-                <h1><center><b>CHECK OUT WHAT OTHER PEOPLE HAD TO SAY</b></center></h1>
+                <h1><center><b>CHECK OUT WHAT OTHER'S HAD TO SAY</b></center></h1>
                  {this.state.data.map((comic,index)=>{
               
                      return(

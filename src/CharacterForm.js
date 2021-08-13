@@ -42,7 +42,7 @@ class CharacterForm extends Component{
         .catch(err=> alert(` Your CLEARLY not a fan... Try Again! `))
         
         
-        console.log(this.state.image)
+       
       }
         render(){
 
@@ -53,7 +53,7 @@ class CharacterForm extends Component{
                 
                 <Form className='m-auto' onSubmit={this.handleSubmit} >   
                 <Form.Control className='form' onSubmit={this.handleSubmit} onChange={this.handleChange}  size="md" type="text" placeholder="Enter Marvel character here....." />
-                <center> <Button onClick={()=>console.log('clicked')}as="input" type="submit" value="Search" /></center> 
+                <center> <Button as="input" type="submit" value="Search" /></center> 
                 </Form>
                 <HeroCard name={this.state.name} 
                 image={this.state.image}

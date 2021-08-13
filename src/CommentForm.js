@@ -7,7 +7,7 @@ export default class CommentForm extends Component{
         super()
         this.state={
             favoriteCharacter: '',
-            FavoriteComic: '',
+         
             comment:''
         }
 
@@ -16,13 +16,13 @@ export default class CommentForm extends Component{
 
     handleSubmit=(e)=>{
        
-           fetch('http://localhost:3003/favs',{
+           fetch('http://localhost:3000/favs',{
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
                 
                     favoriteCharacter: this.state.firstname,
-                    FavoriteComic:   this.state.lastname,
+                   
                     comment: this.state.comment
                 })
             })
